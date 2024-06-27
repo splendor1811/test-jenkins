@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-    label 'docker' 
-  }
+    agent any
 
     options{
         // Max number of build logs to keep and days to keep
@@ -19,7 +17,6 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    label 'docker'
                     image 'python:3.8' 
                 }
             }
