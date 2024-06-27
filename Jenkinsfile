@@ -22,6 +22,7 @@ pipeline {
                         def dockerHome = tool 'myDocker'
                         env.PATH = "${dockerHome}/bin:${env.PATH}"
                 }
+                echo "haahahaha"
             }
 
     }
