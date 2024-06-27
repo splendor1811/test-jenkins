@@ -12,8 +12,13 @@ pipeline {
         registry = 'quandvrobusto/house-price-prediction-api'
         registryCredential = 'dockerhub'      
     }
-    
+
+
     stages {
+        stage('Initialize'){
+            def dockerHome = tool 'myDocker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
         stage('Test') {
             agent {
                 docker {
