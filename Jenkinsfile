@@ -28,7 +28,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'python:3.8' 
+                    image 'python:3.9.19-slim' 
                 }
             }
             steps {
