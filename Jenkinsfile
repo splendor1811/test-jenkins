@@ -16,9 +16,14 @@ pipeline {
 
     stages {
         stage('Initialize'){
-            def dockerHome = tool 'myDocker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
+            steps {
+                echo 'Setting up environment..'
+                script {
+                    def dockerHome = tool 'myDocker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
     }
+        }
         stage('Test') {
             agent {
                 docker {
@@ -49,5 +54,5 @@ pipeline {
                 echo 'Running a script to trigger pull and start a docker container'
             }
         }
-    }
+    
 }
