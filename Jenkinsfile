@@ -20,7 +20,7 @@ pipeline {
                 echo 'test docker'
                 script {
                         def dockerHome = tool 'myDocker'
-                        env.PATH = "/Users/buildserver/Library/Group\ Containers/group.com.docker/bin/"
+                        env.PATH = "${dockerHome}/bin:${env.PATH}"
                 }
                 echo "haahahaha"
             }
