@@ -14,7 +14,7 @@ pipeline {
     }
 
 
-    // stages {
+    stages {
     //     stage('Initialize'){
     //         steps {
     //             echo 'test docker'
