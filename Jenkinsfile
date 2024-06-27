@@ -15,16 +15,16 @@ pipeline {
 
 
     stages {
-    //     stage('Initialize'){
-    //         steps {
-    //             echo 'test docker'
-    //             script {
-    //                     def dockerHome = tool 'myDocker'
-    //                     env.PATH = "${dockerHome}/bin:${env.PATH}"
-    //             }
-    //         }
+        stage('Initialize'){
+            steps {
+                echo 'test docker'
+                script {
+                        def dockerHome = tool 'myDocker'
+                        env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
+            }
 
-    // }
+    }
         stage('Test') {
             agent {
                 docker {
